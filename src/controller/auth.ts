@@ -6,6 +6,7 @@ import loggerWithNameSpace from "../utils/logger";
 
 const logger = loggerWithNameSpace("AuthController");
 
+// Function to register a new user
 export async function login(req: Request, res: Response, next: NextFunction) {
   const { body } = req;
   try {
@@ -18,6 +19,7 @@ export async function login(req: Request, res: Response, next: NextFunction) {
   }
 }
 
+// Function to refresh access token
 export async function refresh(req: Request, res: Response, next: NextFunction) {
   const { body } = req;
 

@@ -1,5 +1,6 @@
 import Joi from "joi";
 
+// Define the schema for the user query
 export const getUserQuerySchema = Joi.object({
   q: Joi.string().optional(),
   page: Joi.number().optional().messages({
@@ -7,6 +8,7 @@ export const getUserQuerySchema = Joi.object({
   }),
 }).options({ stripUnknown: true });
 
+// Define the schema for the user body
 export const createUserBodySchema = Joi.object({
   name: Joi.string().required().messages({
     "any.required": "Name must be a string",
@@ -45,6 +47,7 @@ export const createUserBodySchema = Joi.object({
     }),
 }).options({ stripUnknown: true });
 
+// Define the schema for the update user body
 export const updateUserBodySchema = Joi.object({
   name: Joi.string().optional().messages({
     "any.required": "Name must be a string",
@@ -83,6 +86,7 @@ export const updateUserBodySchema = Joi.object({
     }),
 }).options({ stripUnknown: true });
 
+// Define the schema for the user id
 export const userIdSchema = Joi.object({
   id: Joi.number().required().messages({
     "number.base": "Id must be a number",

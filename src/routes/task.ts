@@ -16,13 +16,7 @@ import {
 
 const tasksRoutes = express.Router();
 
-tasksRoutes.get(
-  "/",
-  authenticate,
-  authorize("tasks.get"),
-  validateReqParams(taskIdSchema),
-  getTasks
-);
+tasksRoutes.get("/", authenticate, authorize("tasks.get"), getTasks);
 
 tasksRoutes.get(
   "/:id",

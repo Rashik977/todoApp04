@@ -60,6 +60,7 @@ export async function authenticate(
   next();
 }
 
+// Middleware to authorize user
 export function authorize(permission: string) {
   return function (req: Request, res: Response, next: NextFunction) {
     const user = req.user!;

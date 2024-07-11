@@ -16,12 +16,16 @@ const limiter = rateLimit({
   message: "Too many requests",
 });
 
+// Add security headers
 app.use(helmet());
 
+// Limit requests
 app.use(limiter);
 
+// Allow only specific origins
 const allowedOrigins = ["https://example.com"];
 
+// Enable CORS
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -34,12 +38,16 @@ app.use(
   })
 );
 
+// Parse JSON
 app.use(express.json());
 
+// For logger
 app.use(requestLogger);
 
+// Add routes
 app.use(router);
 
+// Error handling middleware
 app.use(errorHandler);
 
 app.listen(port, () => {

@@ -8,6 +8,7 @@ import loggerWithNameSpace from "../utils/logger";
 
 const logger = loggerWithNameSpace("ValidatorMiddleware");
 
+// function to validate request query
 export function validateReqQuery(schema: Schema) {
   return (req: Request, res: Response, next: NextFunction) => {
     logger.info("Validating query params");
@@ -23,6 +24,7 @@ export function validateReqQuery(schema: Schema) {
   };
 }
 
+// function to validate request body
 export function validateReqBody(schema: Schema) {
   return (req: Request, res: Response, next: NextFunction) => {
     logger.info("Validating request body");
@@ -38,6 +40,7 @@ export function validateReqBody(schema: Schema) {
   };
 }
 
+// function to validate request params
 export function validateReqParams(schema: Schema) {
   return (req: Request, res: Response, next: NextFunction) => {
     logger.info("Validating request params");

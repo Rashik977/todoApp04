@@ -7,6 +7,7 @@ import { getUserQuery } from "../interfaces/User";
 
 const logger = loggerWithNameSpace("UserController");
 
+// Get all users
 export function getUsers(
   req: Request<any, any, any, getUserQuery>,
   res: Response,
@@ -23,6 +24,7 @@ export function getUsers(
   }
 }
 
+// Create a new user
 export async function createUser(
   req: Request,
   res: Response,
